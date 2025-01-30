@@ -1,0 +1,132 @@
+.nav {
+  display: flex;
+  margin-right: auto;
+  padding-bottom: 3px;
+
+  @include big-desktop {
+    padding-bottom: 0;
+  }
+
+  @include tablet {
+    grid-area: nav;
+    margin-right: 0;
+    padding: 12px 27px 13px 27px;
+    background-color: var(--medium-grey-color);
+  }
+
+  @include small-tablet {
+    padding: 13px 21px;
+  }
+
+  &__list {
+    @include flex;
+    gap: 79px;
+    flex-wrap: wrap;
+    max-width: 740.44px;
+    font-family: var(--font-family-neue);
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--white-collor);
+
+    @include for-desktop {
+      gap: 50px;
+    }
+
+    @include big-desktop {
+      gap: 33px;
+    }
+
+    @include tablet {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  .nav__btn-burger {
+    display: none;
+
+    @include small-tablet {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 18px;
+    }
+
+    .nav__burger-line {
+      @include small-tablet {
+        position: absolute;
+        left: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: var(--white-collor);
+        transform: translateX(-50%);
+      }
+    }
+
+    .nav__burger-line:nth-child(1) {
+      @include small-tablet {
+        top: 1px;
+       }
+    }
+
+    .nav__burger-line:nth-child(2) {
+      @include small-tablet {
+        top: 50%;
+        transform: translate(-50%, -50%);
+       }
+    }
+
+    .nav__burger-line:nth-child(3) {
+      @include small-tablet {
+        bottom: 1px;
+        left: 5px;
+        width: 10px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+    outline: transparent;
+    transition: color .3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -2px;
+      right: -5px;
+      bottom: -2px;
+      left: -5px;
+      transition: background-color .3s ease-in-out;
+    }
+
+    &:hover {
+      color: var(--orange-collor);
+    }
+
+    &:focus {
+      color: var(--white-collor);
+    }
+
+    &:focus::before {
+      background-color: var(--mustard-collor);
+    }
+
+    &:active {
+      color: var(--broun-collor);
+    }
+
+    &:active::before {
+      background-color: transparent;
+    }
+  }
+
+}
+
+

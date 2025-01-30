@@ -1,0 +1,4 @@
+@mixin block-gap {
+  @include flex;
+  gap: var(--gap-size);
+}

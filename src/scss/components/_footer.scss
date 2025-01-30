@@ -1,0 +1,129 @@
+.footer {
+  padding: 25px 0 15px 0;
+  background-color: var(--grey-collor);
+
+  @include mobile {
+    padding-top: 32px;
+    padding-bottom: 0;
+  }
+}
+
+.footer__container {
+  @include flex;
+  color: var(--light-collor);
+
+  @include big-desktop {
+    justify-content: space-between;
+  }
+
+  @include tablet {
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    @include flex-column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footer__left {
+    @include flex-column;
+    gap: 3px;
+    margin-right: 204px;
+
+    @include for-desktop {
+      gap: 6px;
+      margin-right: 150px;
+    }
+
+    @include big-desktop {
+      padding-top: 4px;
+      margin-right: 135px;
+    }
+
+    @include mobile {
+      order: 2;
+      gap: 3px;
+      align-items: center;
+      margin-right: 0;
+      padding-top: 14px;
+      width: 100%;
+      background-color: var(--medium-grey-color);
+    }
+
+
+    .footer__link {
+      @include big-desktop {
+        width: 166px;
+        height: 27px;
+      }
+
+      @include mobile {
+        width: 111px;
+        height: 18px;
+      }
+    }
+
+    .footer__small {
+      font-family: var(--font-family-neue);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+
+      @include mobile {
+        font-size: 10px;
+        line-height: 13px;
+      }
+    }
+  }
+
+  .footer__center {
+    margin: 0;
+    margin-right: auto;
+    max-width: 361px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include tablet {
+      display: none;
+    }
+
+    .footer__author {
+      font-style: normal;
+    }
+  }
+
+  .footer__right {
+    @include flex-column;
+    gap: 10px;
+
+    @include mobile {
+      margin-bottom: 29px;
+    }
+
+    .footer__socials {
+      @include flex;
+      justify-content: center;
+      gap: 20px;
+
+      .footer__social {
+        fill: var(--light-collor);
+        transition: fill .3s ease-in-out;
+
+        &:hover {
+          outline: none;
+          fill: var(--orange-collor);
+        }
+
+        &:focus {
+          fill: var(--mustard-collor);
+        }
+
+        &:active {
+          fill: var(--broun-collor);
+        }
+      }
+    }
+  }
+}

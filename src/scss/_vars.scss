@@ -1,0 +1,37 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family-roboto: "Roboto", "Open Sans", sans-serif;
+  --font-family-neue: "TT Firs Neue", "Open Sans", sans-serif;
+  --content-width: 1290px;
+  --content-width-big-desktop: 962px;
+  --content-width-tablet: 908px;
+  --content-width-mobile: 278;
+  --container-offset: 16.41%;
+  --container-offset-big-desktop: 31px;
+  --container-offset-tablet: 27px;
+  --container-offset-mobile: 21px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-width-big-desktop: calc(var(--content-width-big-desktop) + (var(--container-offset-big-desktop) * 2));
+  --container-width-tablet: calc(var(--content-width-tablet) + (var(--container-offset-tablet) * 2));
+  --container-width-mobile: calc(var(--content-width-mobile) + (var(--container-offset-mobile) * 2));
+
+  // colors
+  --white-collor: #fff;
+  --grey-collor: #202020;
+  --orange-collor: #ff6e30;
+  --mustard-collor: #bc572b;
+  --broun-collor: #ce4307;
+  --light-collor: #cacaca;
+  --light-grey-collor: #999;
+  --medium-grey-color: #4a4a4a;
+  --form-light-collor: #e9e9e9;
+
+  // size
+  --offsets: 1;
+  --gap-size: 30px;
+  --max-width: 630px;
+  --max-width-big-desktop: 466x;
+  --max-width-big-desktop:calc((100% - (var(--offsets) * var(--gap-size))) / (var(--offsets) + 1));
+}

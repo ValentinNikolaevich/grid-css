@@ -1,0 +1,216 @@
+.section-about {
+  padding: 32px 0 70px 0;
+  background-color: var(--grey-collor);
+
+  @include big-desktop {
+    padding-bottom: 60px;
+  }
+
+  @include tablet {
+    padding-bottom: 62px;
+  }
+
+  @include mobile {
+    padding-bottom: 53px;
+  }
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--gap-size);
+  color: var(--light-collor);
+
+  @include small-tablet {
+    @include flex-column;
+  }
+
+  @include mobile {
+    gap: 21px;
+  }
+
+  &__left {
+    @include flex-column;
+    gap: 6px;
+
+    .about__title {
+      max-width: 364px;
+
+      @include mobile {
+        font-size: 18px;
+        line-height: 23px;
+      }
+    }
+
+    .about__descr {
+      max-width: 630px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+
+      @include big-desktop {
+        word-spacing: 1.1px;
+      }
+
+      @include tablet {
+        word-spacing: normal;
+      }
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  &__right {
+    @include flex-column;
+    justify-content: end;
+    padding-top: 31px;
+
+    @include big-desktop {
+      padding-bottom: 21px;
+    }
+
+    @include tablet {
+      padding-bottom: 7px;
+    }
+
+    @include mobile {
+      padding-top: 0;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      margin-bottom: 25px;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../img/about-1920.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include for-desktop {
+        background-image: url("../../img/about-1024.png");
+      }
+
+      @include tablet {
+        padding-bottom: 7px;
+        background-image: url("../../img/about-768.png");
+      }
+
+      @include small-tablet {
+        padding-top: 0;
+        min-height: 714px;
+        background-image: url("../../img/about-1024.png");
+      }
+
+      @include mobile {
+        padding-bottom: 15px;
+        min-height: 278px;
+        background-image: url("../../img/about-320.png");
+      }
+  }
+
+
+    .about__subtitle {
+      margin-bottom: 16px;
+      max-width: 630px;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 22px;
+
+      @include big-desktop {
+        margin-bottom: 18px;
+      }
+
+      @include tablet {
+        margin-bottom: 18px;
+      }
+
+      @include mobile {
+        margin-bottom: 14px;
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+
+    .about__form {
+      @include block-gap;
+
+      @include big-desktop {
+        @include flex-column;
+        gap: 20px;
+        width: 342px;
+      }
+
+      @include tablet {
+        gap: 22px;
+      }
+
+      @include mobile {
+        gap: 24px;
+        width: 100%;
+      }
+    }
+
+    .about__input {
+      padding: 15px 23px;
+      box-sizing: border-box;
+      outline: transparent;
+      width: 474px;
+      width: 100%;
+      color: var(--white-collor);
+      background-color: var(--medium-grey-color);
+
+      &:hover::placeholder {
+        color: var(--orange-collor);
+        transition: color .3s ease-in-out;
+      }
+
+      &:focus {
+        outline: 1px solid var(--orange-collor);
+        transition: outline-color .3s ease-in-out;
+      }
+
+      @include big-desktop {
+        width: 100%;
+      }
+
+      @include mobile {
+        padding: 11px 23px 13px 23px;
+        width: 100%;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    .about__btn {
+      @include button(var(--orange-collor), var(--orange-collor));
+      color: var(--white-collor);
+
+      &:hover {
+        @include btn-effects(var(--mustard-collor), var(--mustard-collor))
+      }
+
+      &:focus {
+        @include btn-effects(var(--broun-collor), var(--orange-collor))
+      }
+
+      &:active {
+        @include btn-effects(var(--broun-collor), var(--broun-collor))
+      }
+
+      @include big-desktop {
+        align-self: flex-start;
+      }
+
+      @include mobile {
+        padding: 6px 20px 9px 19px;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}

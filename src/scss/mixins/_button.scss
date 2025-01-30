@@ -1,0 +1,16 @@
+@mixin button($color-border, $color-back) {
+  padding: 12px 20px;
+  border: 3px solid $color-border;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  background-color: $color-back;
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+@mixin btn-effects($color-border, $color-back) {
+  border-color: $color-border;
+  background-color: $color-back;
+}
